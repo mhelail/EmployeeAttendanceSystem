@@ -2,33 +2,39 @@
 
 
 
-I built this as a Windows Forms application to keep track of employees, when they come and leave work, and a short note about what they did during the day. The data is stored in a MySQL database.
+This is a Windows Forms application I built as a university project to track employees, their daily attendance and simple activity notes.  
+
+The system stores the data in a MySQL database and is designed as a small example of a real-world attendance and logging system.
 
 
 
-\## What the app does
+\## Features
 
 
 
-\- Add, edit and delete employee records  
+\- Add, edit and delete employees
 
-\- Record daily attendance (entry and exit time)  
+\- Record daily attendance (check-in / check-out)
 
-\- Add a short activity / note for each employee  
+\- Mark attendance status as Present, Absent or Late
 
-\- List and search employees and their attendance records  
+\- Add a short activity / note for each employee
+
+\- View and search attendance records
+
+\- Basic role-based use (Admin / Employee) depending on the database data
 
 
 
-\## Technologies
+\## Tech Stack
 
 
 
-\- C#
-
-\- .NET / Windows Forms
+\- C# (.NET, Windows Forms)
 
 \- MySQL
+
+\- Visual Studio
 
 
 
@@ -36,9 +42,11 @@ I built this as a Windows Forms application to keep track of employees, when the
 
 
 
-1\. Clone the project:
+```bash
 
-&nbsp;  ```bash
+1\. Clone the project
+
+
 
 &nbsp;  git clone https://github.com/mhelail/CalisanTakipSistemi.git
 
@@ -46,22 +54,57 @@ I built this as a Windows Forms application to keep track of employees, when the
 
 
 
-2\. Open the solution in Visual Studio:
-
-&nbsp;  Open WinFormsApp1.sln
-
-
-3\. Set up the database:
-
-&nbsp;  Make sure MySQL is installed and running
+2\. Create the database in MySQL
 
 
 
-&nbsp;  Create a database for the project
+&nbsp;  - Create a database named CalisanTakipDB
+
+&nbsp;  - Run the SQL scripts that create:
+
+&nbsp;    - Tables (Users, Employees, Attendance, AuditLogs)
+
+&nbsp;    - Stored procedures (for Users, Employees, Attendance, AuditLogs)
+
+&nbsp;    - Triggers (for attendance checks and logging)
+
+&nbsp;  - The SQL code is the same as the one I used in my report for this project.
 
 
 
-&nbsp;  Update the connection string in App.config with your own server, user id, password and database name
+3\. Open the solution in Visual Studio
 
-4. Build and run the project from Visual Studio.
+
+
+&nbsp;  - Open WinFormsApp1.sln
+
+
+
+4\. Update the connection string
+
+
+
+&nbsp;  - Open App.config
+
+&nbsp;  - Set your own:
+
+&nbsp;    - server
+
+&nbsp;    - user id
+
+&nbsp;    - password
+
+&nbsp;    - database (should be CalisanTakipDB)
+
+
+
+5\. Build and run
+
+
+
+&nbsp;  - Build the project in Visual Studio
+
+&nbsp;  - Run the application
+
+
 
